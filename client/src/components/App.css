@@ -10,6 +10,25 @@ body {
 * {
     box-sizing: border-box;
 }
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    color: #343434;
+    letter-spacing: .04rem;
+    font-weight: 500;
+}
 /* Normal Laptops */
 
 @media screen and (max-width: 1280px) {
