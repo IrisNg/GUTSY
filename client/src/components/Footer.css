@@ -1,0 +1,72 @@
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+li {
+  list-style: none; }
+
+body {
+  color: #343434;
+  letter-spacing: .04rem;
+  font-weight: 500; }
+
+.brand, .footer__company-details .company-details__brand {
+  color: #f45800;
+  font-family: 'Pacifico', cursive;
+  margin: 0; }
+
+.container, .footer__company-details {
+  margin: 0 3rem;
+  padding: .8rem 1rem; }
+
+.footer__site-map {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: .8rem;
+  padding: 3rem 6rem; }
+  .footer__site-map .site-map__header {
+    font-size: .9rem;
+    margin: 1rem 0; }
+  .footer__site-map li {
+    margin: .7rem 0;
+    cursor: pointer; }
+    .footer__site-map li:hover {
+      text-decoration: underline; }
+    .footer__site-map li i {
+      font-size: 1.2rem;
+      vertical-align: middle;
+      margin-right: .7rem; }
+    .footer__site-map li span {
+      vertical-align: middle; }
+
+.footer__company-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #c3c3c3;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem; }
+  .footer__company-details .company-details__brand {
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: -.4rem;
+    vertical-align: middle; }
+  .footer__company-details .company-details__slogan {
+    font-size: .8rem;
+    vertical-align: middle; }
+  .footer__company-details .company-details__links {
+    display: flex;
+    font-size: .8rem; }
+    .footer__company-details .company-details__links li {
+      margin: 0 .7rem;
+      cursor: pointer; }
+      .footer__company-details .company-details__links li:hover {
+        text-decoration: underline; }
+
+/*# sourceMappingURL=Footer.css.map */

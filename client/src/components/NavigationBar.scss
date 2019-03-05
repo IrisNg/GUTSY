@@ -1,0 +1,101 @@
+@import "./Default";
+
+.navigation-bar {
+    .navigation-bar__main-nav {
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .main-nav__primary {
+            display: flex;
+            align-items: center;
+            width: 36%;
+            .main-nav__brand {
+                @extend .brand;
+                font-size: 2.3rem;
+            }
+            .main-nav__search {
+                height: 2.2rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-left: 1.5rem;
+                .main-nav__search-input {
+                    height: 100%;
+                    width: 100%;
+                    padding: 0 .8rem;
+                    border: 1px solid #8d8d8d;
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                    font-family: inherit;
+                    background-color: rgb(249, 249, 249);
+                    box-shadow: 2.5px 2.5px 2.5px inset rgb(233, 233, 233);
+                    outline: none;
+                    &:hover,
+                    &:focus {
+                        box-shadow: none;
+                        background-color: white;
+                        border-color: black;
+                    }
+                }
+                .main-nav__search-button {
+                    background-color: #2f2f2f;
+                    color: white;
+                    height: 100%;
+                    font-weight: 700;
+                    padding: 0 .8rem;
+                    font-size: .85rem;
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                    &:hover {
+                        background-color: #494949;
+                    }
+                }
+            }
+        }
+        .main-nav__items {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            li {
+                margin: 0 .7rem;
+                font-size: .95rem;
+            }
+            .main-nav__sign-in {
+                border: 1px solid #595959;
+                padding: .5rem;
+                box-sizing: border-box;
+                border-radius: 3px;
+            }
+            .main-nav__basket,
+            .main-nav__discover {
+                display: flex;
+                align-self: flex-end;
+                flex-direction: column;
+                align-items: center;
+                font-size: .75rem;
+                border-left: 1px solid #c7c7c7;
+                padding: 0 .7rem;
+                margin-right: 0;
+                color: #8d8d8d;
+                font-weight: 400;
+                i {
+                    font-size: 1.4rem;
+                    margin-bottom: .2rem;
+                }
+            }
+            .main-nav__basket {
+                margin-left: 0;
+            }
+        }
+    }
+    .navigation-bar__categories {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        border-top: 1px solid #c3c3c3;
+        border-bottom: 1px solid #c3c3c3;
+        font-size: .85rem;
+        padding: .9rem 4rem;
+    }
+}

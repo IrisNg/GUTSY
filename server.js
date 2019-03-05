@@ -4,7 +4,7 @@ var express = require('express'),
    bodyParser = require('body-parser'),
    mongoose = require('mongoose'),
    port = process.env.PORT || 5000,
-   url = process.env.MONGODB_URI || 'mongodb://localhost:27017/new_app';
+   url = process.env.MONGODB_URI || 'mongodb://localhost:27017/gutsy_app';
 
 //-- SETUP : REQUIRING ROUTES
 
