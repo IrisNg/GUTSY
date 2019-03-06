@@ -1,6 +1,6 @@
 @import "_Default";
 .navigation-bar__main-nav {
-    @extend .container;
+    @extend %container;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,45 +9,23 @@
         align-items: center;
         width: 36%;
         .main-nav__brand {
-            @extend .brand;
+            @extend %brand;
             font-size: 2.3rem;
+            cursor: pointer;
+
         }
         .main-nav__search {
-            height: 2.2rem;
+            @extend %attached-field;
             width: 100%;
-            display: flex;
-            align-items: center;
+         
             margin-left: 1.5rem;
             .main-nav__search-input {
-                height: 100%;
-                width: 100%;
-                padding: 0 .8rem;
-                border: 1px solid #8d8d8d;
-                border-top-left-radius: 3px;
-                border-bottom-left-radius: 3px;
-                font-family: inherit;
-                background-color: rgb(249, 249, 249);
-                box-shadow: 2.5px 2.5px 2.5px inset rgb(233, 233, 233);
-                outline: none;
-                &:hover,
-                &:focus {
-                    box-shadow: none;
-                    background-color: white;
-                    border-color: black;
-                }
+                @extend %attached-input;
+                
             }
             .main-nav__search-button {
-                background-color: #2f2f2f;
-                color: white;
-                height: 100%;
-                font-weight: 700;
-                padding: 0 .8rem;
-                font-size: .85rem;
-                border-top-right-radius: 3px;
-                border-bottom-right-radius: 3px;
-                &:hover {
-                    background-color: #494949;
-                }
+                @extend %attached-button;
+                
             }
         }
     }
@@ -58,12 +36,25 @@
         li {
             margin: 0 .7rem;
             font-size: .95rem;
+            cursor: pointer;
+
+        }
+        .main-nav__sell,
+        .main-nav__register {
+            &:hover {
+                text-decoration: underline;
+            }
         }
         .main-nav__sign-in {
             border: 1px solid #595959;
             padding: .5rem;
             box-sizing: border-box;
             border-radius: 3px;
+            &:hover {
+                background-color: #404040;
+                color: white;
+                border-color: transparent;
+            }
         }
         .main-nav__basket,
         .main-nav__discover {
@@ -81,6 +72,9 @@
                 font-size: 1.4rem;
                 margin-bottom: .2rem;
             }
+            &:hover i {
+                color: #303030;
+            }
         }
         .main-nav__basket {
             margin-left: 0;
@@ -90,10 +84,14 @@
 
 .navigation-bar__categories {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0;
     border-top: 1px solid #c3c3c3;
     border-bottom: 1px solid #c3c3c3;
     font-size: .85rem;
-    padding: .9rem 4rem;
+    padding: .9rem 5rem;
+    li {
+        cursor: pointer;
+
+    }
 }

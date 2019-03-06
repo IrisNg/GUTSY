@@ -1,20 +1,22 @@
-.brand, .footer__company-details .company-details__brand {
+.footer__company-details .company-details__brand {
   color: #f45800;
   font-family: 'Pacifico', cursive;
   margin: 0; }
 
-.container, .footer__company-details {
-  margin: 0 3rem;
+.footer__company-details {
+  margin: 0 5rem;
   padding: .8rem 1rem; }
 
 .footer__site-map {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   font-size: .8rem;
   padding: 3rem 6rem; }
   .footer__site-map .site-map__header {
     font-size: .9rem;
     margin: 1rem 0; }
+  .footer__site-map ul {
+    padding-left: 0; }
   .footer__site-map li {
     margin: .7rem 0;
     cursor: pointer; }

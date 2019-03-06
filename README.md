@@ -2,6 +2,8 @@
 
 ~~ under construction ~~
 
+Oh shoot, is Etsy going to come for me if I clone their website?
+
 
 ## Features
 

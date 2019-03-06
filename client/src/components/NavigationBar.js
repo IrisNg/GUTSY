@@ -15,8 +15,8 @@ class NavigationBar extends React.Component {
                   </div>
                </div>
                <ul className="main-nav__items">
-                  <li>Sell on Gutsy</li>
-                  <li>Register</li>
+                  <li className="main-nav__sell">Sell on Gutsy</li>
+                  <li className="main-nav__register">Register</li>
                   <li className="main-nav__sign-in">
                      <button>Sign in</button>
                   </li>

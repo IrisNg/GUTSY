@@ -3,38 +3,60 @@ import { Link } from 'react-router-dom';
 
 const Introduction = () => {
    return (
-      <div>
-         <h1>If it’s handcrafted, vintage, custom or unique, it’s on Gutsy.</h1>
-         <div>
-            <div>
-               <div>
-                  <h3>Crafted for peak coziness</h3>
-                  <Link to="/">Shop decor ></Link>
+      <div className="introduction">
+         <h1 className="introduction__header">
+            If it’s handcrafted, vintage, custom or unique, <br />
+            it’s on Gutsy.
+         </h1>
+         <div className="introduction__catalog">
+            <div className="catalog__decor">
+               <div className="decor__content">
+                  <h3 className="decor__header">Crafted for peak coziness</h3>
+                  <Link to="/" className="decor__link">
+                     Shop decor
+                     <i className="fas fa-angle-right" />
+                  </Link>
                </div>
-               <img />
+               <img src="https://i.etsystatic.com/ij/1b08a3/1721469044/ij_halfxhalf.1721469044_kjdjh5u1.jpg?version=0" />
             </div>
-            <div>
-               <h3>Plan your spectacular love fest.</h3>
-               <Link to="/">Shop weddings ></Link>
+            <div className="catalog__sub">
+               <div className="catalog__sub-wedding">
+                  <img src="https://i.etsystatic.com/ij/6f26c4/1768928451/ij_halfxhalf.1768928451_1gqi1iiu.jpg?version=0" />
+                  <div className="wedding__content">
+                     <h3 className="wedding__header">Plan your spectacular love fest.</h3>
+                     <Link to="/" className="wedding__link">
+                        Shop weddings
+                        <i className="fas fa-angle-right" />
+                     </Link>
+                  </div>
+               </div>
+               <Link to="/" className="catalog__sub-unique">
+                  Unique finds that ship for free <i className="fas fa-angle-right" />
+               </Link>
             </div>
-            <Link to="/">Unique finds that ship for free ></Link>
          </div>
-         <ul>
+         <ul className="introduction__list">
             <li>
-               <i className="fas fa-check" />
-               <h5>Unique everything</h5>
+               <div>
+                  <i className="fas fa-check" />
+                  <h5 className="introduction__list-header">Unique everything</h5>
+               </div>
                <p>
                   We have millions of one-of-a-kind iteams, so you can find whatever you need (or really, really want).
                </p>
             </li>
             <li>
-               <i className="fas fa-check" />
-               <h5>Independent sellers</h5>
+               <div>
+                  <i className="fas fa-check" />
+                  <h5 className="introduction__list-header">Independent sellers</h5>
+               </div>
                <p>Buy directly from someone who put their heart and soul into making something special.</p>
             </li>
             <li>
-               <i className="fas fa-check" />
-               <h5>Secure shopping</h5>
+               <div>
+                  <i className="fas fa-check" />
+                  <h5 className="introduction__list-header">Secure shopping</h5>
+               </div>
                <p>We use best-in-class technology to protect your transactions.</p>
             </li>
          </ul>

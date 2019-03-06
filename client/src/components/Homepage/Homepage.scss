@@ -1,0 +1,282 @@
+@import "../_Default";
+//Introduction
+.introduction {
+    @extend %container;
+}
+
+.introduction__header {
+    @extend %classy-font;
+    text-align: center;
+    width: 100%;
+    margin: 2.2rem 0;
+    font-size: 1.65rem;
+    line-height: 2.2rem;
+}
+
+.introduction__catalog {
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    justify-content: space-between;
+}
+
+.catalog__decor {
+    width: 68%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1.5px solid #a61a2e;
+    border-radius: 3px;
+    cursor: pointer;
+    img {
+        object-fit: cover;
+        object-position: 50% 20%;
+        width: 68%;
+        height: 100%;
+    }
+}
+
+.decor__content {
+    display: flex;
+    width: 32%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a61a2e;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.decor__header {
+    @extend %classy-font;
+    font-size: 1.5rem;
+    margin: 0 0 .8rem 0;
+}
+
+.catalog__sub {
+    width: calc(32% - 15px);
+    height: 100%;
+    color: white;
+}
+
+.catalog__sub-wedding {
+    height: 68%;
+    position: relative;
+    cursor: pointer;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border: 1.5px solid transparent;
+        border-radius: 4px;
+    }
+}
+
+.wedding__content {
+    position: absolute;
+    top: 1rem;
+    left: 1.3rem;
+    width: 60%;
+}
+
+.wedding__header {
+    line-height: 1.4rem;
+    margin-bottom: .8rem;
+}
+
+.catalog__sub-unique {
+    height: calc(32% - 15px);
+    width: 100%;
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #a61a2e;
+    padding: 1rem 1.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: .92rem;
+    font-weight: 700;
+    border: 1.5px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    i {
+        font-size: inherit;
+        margin-left: .6rem;
+        transform: translateY(2px);
+    }
+}
+
+.decor__link,
+.wedding__link {
+    font-weight: 700;
+    font-size: .92rem;
+    i {
+        vertical-align: middle;
+        font-size: inherit;
+        margin-left: .6rem;
+    }
+}
+
+.introduction__list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding: 0 2rem;
+    li {
+        text-align: center;
+        width: 30%;
+        font-size: .95rem;
+        line-height: 1.5rem;
+        i {
+            font-size: 1.3rem;
+            color: #e55400;
+            vertical-align: middle;
+        }
+    }
+}
+
+.introduction__list-header {
+    display: inline-block;
+    margin: 0 0 .4rem .6rem;
+    font-weight: 400;
+    font-size: 1.15rem;
+}
+
+//Gift
+.gift {
+    @extend %container;
+}
+
+.gift__header {
+    display: inline-block;
+    margin: 2rem 1.3rem .5rem 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.gift__link {
+    cursor: pointer;
+    font-size: .95rem;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.gift__list {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    li {
+        width: 15.5%;
+        @extend %border;
+        border-radius: 3px;
+        cursor: pointer;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+        p {
+            font-size: .9rem;
+            margin: .3rem .7rem 1.8rem .7rem;
+        }
+    }
+}
+
+// CTAbanners
+.cta-banners__banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+    margin: 4rem 0;
+    img {
+        margin: 0 3rem;
+        position: relative;
+    }
+    &:hover .banner__content a span {
+        text-decoration: underline;
+    }
+}
+
+.cta-banners__banner.banner-1 {
+    background-color: #ffac62;
+    .banner__left-image {
+        bottom: 1.5rem;
+    }
+    .banner__right-image {
+        top: 1.5rem;
+    }
+}
+
+.cta-banners__banner.banner-2 {
+    background-color: #ff883e;
+    .banner__left-image {
+        bottom: -3.3rem;
+    }
+    .banner__right-image {
+        bottom: -3.3rem;
+    }
+}
+
+.banner__content {
+    text-align: center;
+    letter-spacing: 0.01rem;
+    flex-shrink: 0;
+    a {
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 1.2rem;
+            margin-left: .3em;
+        }
+    }
+}
+
+.banner__header {
+    @extend %classy-font;
+    font-size: 2.3rem;
+    letter-spacing: .01rem;
+}
+
+.banner__description {
+    font-size: 1.1rem;
+    margin: 1.4em 0 .6em 0;
+}
+
+.cta-banners__subscription {
+    text-align: center;
+    margin-top: 10rem;
+    letter-spacing: .03rem;
+}
+
+.subscription__description {
+    font-size: .95rem;
+    margin-bottom: 2rem;
+}
+
+.subscription__field {
+    @extend %attached-field;
+    width: 25rem;
+    margin: auto;
+    height: 2.4rem;
+}
+
+.subscription__input {
+    @extend %attached-input;
+    box-shadow: none;
+    background-color: white;
+}
+
+.subscription__button {
+    @extend %attached-button;
+    font-size: 1rem;
+}
