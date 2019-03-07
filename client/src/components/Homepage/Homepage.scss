@@ -8,7 +8,7 @@
     @extend %classy-font;
     text-align: center;
     width: 100%;
-    margin: 2.2rem 0;
+    margin: 2.1rem 0;
     font-size: 1.65rem;
     line-height: 2.2rem;
 }
@@ -123,7 +123,7 @@
 .introduction__list {
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
+    margin-top: 3rem;
     padding: 0 2rem;
     li {
         text-align: center;
@@ -155,17 +155,13 @@
     margin: 2rem 1.3rem .5rem 0;
     font-size: 1.8rem;
     cursor: pointer;
-    &:hover {
-        text-decoration: underline;
-    }
+    @extend %hover-underline;
 }
 
 .gift__link {
     cursor: pointer;
     font-size: .95rem;
-    &:hover {
-        text-decoration: underline;
-    }
+    @extend %hover-underline;
 }
 
 .gift__list {

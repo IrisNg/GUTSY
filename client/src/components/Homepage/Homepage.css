@@ -1,6 +1,6 @@
 .introduction, .gift {
   margin: 0 5rem;
-  padding: .8rem 1rem; }
+  padding: .6rem 1rem; }
 
 .subscription__input, .gift__list li {
   border: 1px solid #c6c6c6; }
@@ -9,6 +9,9 @@
   font-weight: 300;
   font-family: 'Merriweather', serif;
   letter-spacing: .03rem; }
+
+.gift__header:hover, .gift__link:hover {
+  text-decoration: underline; }
 
 .subscription__field {
   height: 2.2rem;
@@ -47,7 +50,7 @@
 .introduction__header {
   text-align: center;
   width: 100%;
-  margin: 2.2rem 0;
+  margin: 2.1rem 0;
   font-size: 1.65rem;
   line-height: 2.2rem; }
 
@@ -145,7 +148,7 @@
 .introduction__list {
   display: flex;
   justify-content: space-between;
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding: 0 2rem; }
   .introduction__list li {
     text-align: center;
@@ -168,14 +171,10 @@
   margin: 2rem 1.3rem .5rem 0;
   font-size: 1.8rem;
   cursor: pointer; }
-  .gift__header:hover {
-    text-decoration: underline; }
 
 .gift__link {
   cursor: pointer;
   font-size: .95rem; }
-  .gift__link:hover {
-    text-decoration: underline; }
 
 .gift__list {
   display: flex;
