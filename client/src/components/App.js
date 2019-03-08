@@ -5,6 +5,7 @@ import history from '../history';
 import NavigationBar from './NavigationBar/NavigationBar';
 import Footer from './Footer';
 import Homepage from './Homepage/Homepage';
+import ShopCreate from './ShopCreate';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ class App extends React.Component {
                <NavigationBar />
                <Switch>
                   <Route path="/" exact component={Homepage} />
+                  <Route path="/create-shop" component={ShopCreate} />
                </Switch>
                <Footer />
             </div>

@@ -10,6 +10,7 @@ var express = require('express'),
 
 //-- SETUP : REQUIRING MODELS
 const path = require('path');
+const shopRoutes = require('./routes/shop');
 
 //-- SETUP : APP CONFIG
 mongoose.connect(url, { useNewUrlParser: true });
@@ -18,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //-- ROUTES
-
+app.use(shopRoutes);
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
    // Set static folder

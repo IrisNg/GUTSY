@@ -1,12 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import history from '../../history';
 import productCategories from './productCategories';
 
 import './NavigationBar.css';
 
 class NavigationBar extends React.Component {
    state = {
-      activeCategory: ''
+      activeCategory: null,
+      url: history.location.pathname
    };
+   //Listen to changes in history, this affects if categories section is showing
+   componentDidMount() {
+      history.listen(location => {
+         this.setState({ url: location.pathname });
+      });
+   }
    renderMainCategories() {
       return productCategories.map(mainCategory => {
          return (
@@ -52,6 +61,12 @@ class NavigationBar extends React.Component {
          );
       });
    }
+   handleCategoriesDisplay() {
+      if (this.state.url === '/create-shop') {
+         return '--inactive';
+      }
+      return '';
+   }
    handleExpandedCategoriesDisplay() {
       if (!this.state.activeCategory || this.state.activeCategory.categories.length === 0) {
          return '--inactive';
@@ -59,7 +74,8 @@ class NavigationBar extends React.Component {
       return '';
    }
    handleMainCategoryStyle(category) {
-      if (category === this.state.activeCategory.name) {
+      const { activeCategory } = this.state;
+      if (activeCategory && category === activeCategory.name) {
          return 'main-category--active';
       }
       return '';
@@ -71,7 +87,9 @@ class NavigationBar extends React.Component {
             <div className="navigation-bar__main-nav">
                <div className="main-nav__primary">
                   {/* Logo */}
-                  <h1 className="main-nav__brand">Gutsy</h1>
+                  <h1 className="main-nav__brand">
+                     <Link to="/">Gutsy</Link>
+                  </h1>
                   {/* Search bar */}
                   <div className="main-nav__search">
                      <input type="text" className="main-nav__search-input" placeholder="Search for items or shops" />
@@ -80,7 +98,9 @@ class NavigationBar extends React.Component {
                </div>
                {/* Buttons */}
                <ul className="main-nav__items">
-                  <li className="main-nav__sell">Sell on Gutsy</li>
+                  <li className="main-nav__sell">
+                     <Link to="/create-shop">Sell on Gutsy</Link>
+                  </li>
                   <li className="main-nav__register">Register</li>
                   <li className="main-nav__sign-in">
                      <button>Sign in</button>
@@ -96,11 +116,16 @@ class NavigationBar extends React.Component {
                </ul>
             </div>
             {/* Product Categories */}
-            <div className="navigation-bar__categories" onMouseLeave={() => this.setState({ activeCategory: '' })}>
+            <div
+               className={`navigation-bar__categories${this.handleCategoriesDisplay()}`}
+               onMouseLeave={() => this.setState({ activeCategory: '' })}
+            >
                <ul className="navigation-bar__main-categories">{this.renderMainCategories()}</ul>
-               <ul className={`navigation-bar__expanded-categories${this.handleExpandedCategoriesDisplay()}`}>
-                  {this.renderCategories()}
-               </ul>
+               <div className="navigation-bar__expanded-container">
+                  <ul className={`navigation-bar__expanded-categories${this.handleExpandedCategoriesDisplay()}`}>
+                     {this.renderCategories()}
+                  </ul>
+               </div>
             </div>
          </div>
       );

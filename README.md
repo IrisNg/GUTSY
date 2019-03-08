@@ -13,6 +13,7 @@ Oh shoot, is Etsy going to come for me if I clone their website?
 * Redux-form
 * Stripe
 * Jest to unit test
+* Google OAuth client side
 
 ## Important Files
 
