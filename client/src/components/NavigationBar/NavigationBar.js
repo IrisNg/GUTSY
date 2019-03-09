@@ -12,17 +12,20 @@ class NavigationBar extends React.Component {
    };
    //Listen to changes in history, this affects if categories section is showing
    componentDidMount() {
-      history.listen(location => {
+      history.listen((location) => {
          this.setState({ url: location.pathname });
       });
    }
    renderMainCategories() {
-      return productCategories.map(mainCategory => {
+      return productCategories.map((mainCategory) => {
          return (
             <li
                onMouseOver={() => this.onCategoryHover(mainCategory.name)}
                className={this.handleMainCategoryStyle(mainCategory.name)}
                key={mainCategory.param}
+               onClick={() => {
+                  history.push(`/category/${mainCategory.param}`);
+               }}
             >
                {mainCategory.name}
             </li>
@@ -30,18 +33,24 @@ class NavigationBar extends React.Component {
       });
    }
    // Show more product categories on hover
-   onCategoryHover = activeCategory => {
-      const categoryData = productCategories.find(mainCategory => mainCategory.name === activeCategory);
+   onCategoryHover = (activeCategory) => {
+      const categoryData = productCategories.find((mainCategory) => mainCategory.name === activeCategory);
       this.setState({ activeCategory: categoryData });
    };
    renderCategories() {
       if (!this.state.activeCategory) {
          return null;
       }
-      return this.state.activeCategory.categories.map(category => {
+      return this.state.activeCategory.categories.map((category) => {
          return (
             <li key={category.param} className="expanded-categories__category">
-               <span>{category.name}</span>
+               <span
+                  onClick={() => {
+                     history.push(`/category/${category.param}`);
+                  }}
+               >
+                  {category.name}
+               </span>
                <ul className="expanded-categories__sub-categories">
                   {this.renderSubCategories(category.subCategories)}
                </ul>
@@ -53,9 +62,15 @@ class NavigationBar extends React.Component {
       if (!subCategories) {
          return null;
       }
-      return subCategories.map(subCategory => {
+      return subCategories.map((subCategory) => {
          return (
-            <li key={subCategory.param} className="expanded-categories__sub-category">
+            <li
+               key={subCategory.param}
+               className="expanded-categories__sub-category"
+               onClick={() => {
+                  history.push(`/category/${subCategory.param}`);
+               }}
+            >
                {subCategory.name}
             </li>
          );

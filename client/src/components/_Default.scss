@@ -1,89 +1,110 @@
-
 $logo-color: #f45800;
 $border-color: #c6c6c6;
 $border-color-light: lighten($border-color, 10%);
-$font-color: (normal: #4a4a4a, light: #5f5f5f);
+$font-color: (
+   normal: #4a4a4a,
+   light: #5f5f5f
+);
 %brand {
-    color: #f45800;
-    font-family: 'Pacifico', cursive;
-    margin: 0;
-    
+   color: #f45800;
+   font-family: 'Pacifico', cursive;
+   margin: 0;
 }
 
 %container {
-    margin: 0 5rem;
-    padding: .6rem 1rem;
+   margin: 0 5rem;
+   padding: 0.6rem 1rem;
 }
+
 %container-padding {
-    padding: .6rem 6rem;
+   padding: 0.6rem 6rem;
 }
+
 %border {
-    border: 1px solid #c6c6c6;
+   border: 1px solid #c6c6c6;
 }
+
 %classy-font {
-    font-weight: 300;
-    font-family: 'Merriweather', serif;
-    letter-spacing: .03rem;
+   font-weight: 300;
+   font-family: 'Merriweather', serif;
+   letter-spacing: 0.03rem;
 }
+
 %hover-underline {
-    &:hover {
-        text-decoration: underline;
-    }
+   &:hover {
+      text-decoration: underline;
+   }
 }
+
 %attached-field {
-    height: 2.2rem;
-    display: flex;
-    align-items: center;
+   height: 2.2rem;
+   display: flex;
+   align-items: center;
 }
+
 %input {
-    padding: 0 .8rem;
-    @extend %border;
-    border-radius: 3px;
-    font-family: inherit;
-    background-color: rgb(249, 249, 249);
-    outline: none;
-    height: 2rem;
-    width: 100%;
-    letter-spacing: .04rem;
-    &:hover,
-    &:focus {
-        box-shadow: none;
-        background-color: white;
-        border-color: black;
-    }
+   padding: 0 0.8rem;
+   @extend %border;
+   border-radius: 3px;
+   font-family: inherit;
+   background-color: rgb(249, 249, 249);
+   outline: none;
+   height: 2rem;
+   width: 100%;
+   letter-spacing: 0.04rem;
+   &:hover,
+   &:focus {
+      box-shadow: none;
+      background-color: white;
+      border-color: black;
+   }
+}
+
+%button {
+   background-color: #2f2f2f;
+   color: white;
+   font-weight: 700;
+   letter-spacing: 0.03rem;
+   padding: 0 1rem;
+   font-size: 0.85rem;
+   height: 2rem;
+   border-radius: 3px;
+   &:hover {
+      background-color: #494949;
+   }
 }
 
 %attached-input {
-    padding: 0 .8rem;
-    @extend %border;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    font-family: inherit;
-    background-color: rgb(249, 249, 249);
-    box-shadow: 2px 2px 2px inset rgb(233, 233, 233);
-    outline: none;
-    height: 100%;
-    width: 100%;
-    letter-spacing: .04rem;
-    &:hover,
-    &:focus {
-        box-shadow: none;
-        background-color: white;
-        border-color: black;
-    }
+   padding: 0 0.8rem;
+   @extend %border;
+   border-top-left-radius: 3px;
+   border-bottom-left-radius: 3px;
+   font-family: inherit;
+   background-color: rgb(249, 249, 249);
+   box-shadow: 2px 2px 2px inset rgb(233, 233, 233);
+   outline: none;
+   height: 100%;
+   width: 100%;
+   letter-spacing: 0.04rem;
+   &:hover,
+   &:focus {
+      box-shadow: none;
+      background-color: white;
+      border-color: black;
+   }
 }
 
 %attached-button {
-    background-color: #2f2f2f;
-    color: white;
-    font-weight: 700;
-    letter-spacing: .03rem;
-    padding: 0 .8rem;
-    font-size: .85rem;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    height: 100%;
-    &:hover {
-        background-color: #494949;
-    }
+   background-color: #2f2f2f;
+   color: white;
+   font-weight: 700;
+   letter-spacing: 0.03rem;
+   padding: 0 0.8rem;
+   font-size: 0.85rem;
+   border-top-right-radius: 3px;
+   border-bottom-right-radius: 3px;
+   height: 100%;
+   &:hover {
+      background-color: #494949;
+   }
 }
