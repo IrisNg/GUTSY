@@ -5,6 +5,7 @@ var express = require('express'),
 router.post('/shops', (req, res) => {
    Shop.create(req.body, (err, createdShop) => {
       if (err) {
+         console.log(err);
          res.status(400).json('Could not create shop. Please try again later');
       } else {
          res.json(createdShop);

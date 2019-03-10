@@ -90,7 +90,7 @@
   width: 60%;
   margin-top: 0.3rem;
   padding-bottom: 0.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid #c6c6c6;
   text-align: left; }
 
@@ -149,7 +149,28 @@
   height: 2rem; }
 
 .shop-create__button {
-  flex-grow: 1; }
+  flex-grow: 1;
+  position: relative; }
+
+.shop-create__ask-sign-in {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f45800;
+  padding: 0.7rem;
+  border-radius: 3px; }
+
+.shop-create__ask-sign-in:after {
+  content: " ";
+  position: absolute;
+  right: calc(50% - 10px);
+  bottom: -10px;
+  border-top: 10px solid #f45800;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: none; }
 
 .shop-create__seed-button {
   margin-left: 10px;

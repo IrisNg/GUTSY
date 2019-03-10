@@ -14,28 +14,51 @@ class GoogleOAuth extends Component {
             })
             .then(() => {
                this.auth = window.gapi.auth2.getAuthInstance();
+               //Update initial auth status
                this.onAuthChange(this.auth.isSignedIn.get());
+               //Update auth status automatically on subsequent changes
                this.auth.isSignedIn.listen(this.onAuthChange);
             });
       });
    }
-   onAuthChange = (isSignedIn) => {
+   onAuthChange = isSignedIn => {
+      const userId = this.auth.currentUser.get().getId();
+      const username = this.auth.currentUser
+         .get()
+         .getBasicProfile()
+         .getName();
+      const userImage = this.auth.currentUser
+         .get()
+         .getBasicProfile()
+         .getImageUrl();
+      //Store the userId in the Redux store if user is Signed In
       if (isSignedIn) {
-         this.props.signIn(this.auth.currentUser.get().getId());
+         this.props.signIn({ userId, username, userImage });
       } else {
          this.props.signOut();
       }
    };
+   //Signs user in to OAuth
    onSignIn = () => {
       this.auth.signIn();
    };
+   //Signs user out of OAuth
    onSignOut = () => {
       this.auth.signOut();
    };
+   renderAuthButton(isSignedIn) {
+      if (isSignedIn) {
+         return <button onClick={this.onSignOut}>Sign Out</button>;
+      } else {
+         return <button onClick={this.onSignIn}>Sign In</button>;
+      }
+   }
    render() {
-      return <div />;
+      const { isSignedIn } = this.props;
+      return <div>{this.renderAuthButton(isSignedIn)}</div>;
    }
 }
+
 export default connect(
    null,
    { signIn, signOut }

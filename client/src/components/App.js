@@ -4,7 +4,6 @@ import history from '../history';
 
 import NavigationBar from './NavigationBar/NavigationBar';
 import Footer from './Footer';
-import GoogleOAuth from './GoogleOAuth/GoogleOAuth';
 import Homepage from './Homepage/Homepage';
 import ShopCreate from './ShopCreate/ShopCreate';
 import CategoryShow from './CategoryShow/CategoryShow';
@@ -23,7 +22,6 @@ class App extends React.Component {
                   <Route path="/category/:category" exact component={CategoryShow} />
                </Switch>
                <Footer />
-               <GoogleOAuth />
             </div>
          </Router>
       );

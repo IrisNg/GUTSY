@@ -5,21 +5,15 @@ const CTAbanners = () => {
    return (
       <div>
          <div className="cta-banners__banner banner-1">
-            <img
-               src="https://www.etsy.com/assets/dist/images/homepage/vesta/sell_on_etsy_left.20170228151449.png"
-               className="banner__left-image"
-            />
+            <img src="https://www.etsy.com/assets/dist/images/homepage/vesta/sell_on_etsy_left.20170228151449.png" className="banner__left-image" />
             <div className="banner__content">
                <h1 className="banner__header">Start selling on Gutsy</h1>
                <p className="banner__description">Million of shoppers can't wait to see what you have in store.</p>
-               <Link to="/">
+               <Link to="/create-shop">
                   <span>Open a shop today</span> <i className="fas fa-angle-right" />
                </Link>
             </div>
-            <img
-               src="https://www.etsy.com/assets/dist/images/homepage/vesta/sell_on_etsy_right.20170228151449.png"
-               className="banner__right-image"
-            />
+            <img src="https://www.etsy.com/assets/dist/images/homepage/vesta/sell_on_etsy_right.20170228151449.png" className="banner__right-image" />
          </div>
          <div className="cta-banners__banner banner-2">
             <img
@@ -40,9 +34,7 @@ const CTAbanners = () => {
             />
          </div>
          <div className="cta-banners__subscription">
-            <p className="subscription__description">
-               Get fresh Gutsy trends and unique gift ideas delivered right to your inbox.
-            </p>
+            <p className="subscription__description">Get fresh Gutsy trends and unique gift ideas delivered right to your inbox.</p>
             <div className="subscription__field">
                <input type="text" placeholder="Enter your email" className="subscription__input" />
                <button className="subscription__button">Subscribe</button>

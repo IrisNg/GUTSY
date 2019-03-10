@@ -1,3 +1,4 @@
+
 export const shopReducer = (state = [], action) => {
    switch (action.type) {
       case 'FETCH_SHOPS':

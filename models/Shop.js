@@ -6,7 +6,8 @@ var ShopSchema = new mongoose.Schema({
    productName: String,
    productImage: String,
    categoriesName: [String],
-   categoriesParam: [String]
+   categoriesParam: [String],
+   ownerId: String
 });
 
 var Shop = mongoose.model('Shop', ShopSchema);
