@@ -1,6 +1,6 @@
 import axios from 'axios';
 import history from '../history';
-import { loopCreateShop, flattenCategories, getNumberOfSeedRounds } from './seedHelperFunctions';
+import { loopSeedShop, flattenCategories, getNumberOfSeedRounds } from './seedHelperFunctions';
 
 export const selectCategory = (name, param) => {
    return {
