@@ -49,7 +49,7 @@ export const seedShops = () => async (dispatch, getState) => {
    const numberOfSeed = getNumberOfSeedRounds(getState);
    //Make looped POST requests to the server to create hundred of shops automatically
    //Using Faker NPM to generate fake data
-   loopCreateShop(flattenedCategories, numberOfSeed, ownerId)
+   loopSeedShop(flattenedCategories, numberOfSeed, ownerId)
       .then(createdShops => {
          console.log('Created Shops', createdShops);
          dispatch({ type: 'SEED_SHOPS' });

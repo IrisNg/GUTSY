@@ -15,11 +15,7 @@ export default [
          {
             name: 'Jewellery & Beauty',
             param: 'jewellery-and-beauty',
-            subCategories: [
-               { name: 'Beads', param: 'beads' },
-               { name: 'Charms', params: 'charms' },
-               { name: 'Pendants', params: 'pendants' }
-            ]
+            subCategories: [{ name: 'Beads', param: 'beads' }, { name: 'Charms', params: 'charms' }, { name: 'Pendants', params: 'pendants' }]
          },
          {
             name: 'Sewing & Fiber',
@@ -137,11 +133,7 @@ export default [
          {
             name: "MEN'S",
             param: 'mens',
-            subCategories: [
-               { name: 'Shirts', param: 'men-shirts' },
-               { name: 'Jumpers', param: 'men-jumpers' },
-               { name: 'Boots', param: 'men-boots' }
-            ]
+            subCategories: [{ name: 'Shirts', param: 'men-shirts' }, { name: 'Jumpers', param: 'men-jumpers' }, { name: 'Boots', param: 'men-boots' }]
          },
          {
             name: "KIDS' & BABY",
@@ -201,10 +193,7 @@ export default [
          {
             name: 'Party Supplies',
             param: 'party-supplies',
-            subCategories: [
-               { name: 'Party Decor', param: 'party-decor' },
-               { name: 'Baking & Cake Decoration', param: 'baking-and-cake-decoration' }
-            ]
+            subCategories: [{ name: 'Party Decor', param: 'party-decor' }, { name: 'Baking & Cake Decoration', param: 'baking-and-cake-decoration' }]
          },
          {
             name: 'Invitation & Paper',
