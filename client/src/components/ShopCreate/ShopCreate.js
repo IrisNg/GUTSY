@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import productCategories from '../NavigationBar/productCategories';
+import productCategories from '../../productCategories';
 import { createShop, seedShops } from '../../actions';
 
 import './ShopCreate.css';

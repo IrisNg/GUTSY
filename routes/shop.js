@@ -12,7 +12,7 @@ router.post('/shops', (req, res) => {
       }
    });
 });
-router.get('/shops/:category', (req, res) => {
+router.get('/categories/:category', (req, res) => {
    Shop.find({ categoriesParam: { $all: [req.params.category] } }, (err, foundShops) => {
       if (err) {
          res.status(400).json('No shops exist in this category');

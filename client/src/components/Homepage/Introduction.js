@@ -1,13 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import history from '../../history';
-import { selectCategory } from '../../actions';
 
-const onCategoryClick = (name, param, selectCategory) => {
-   selectCategory(name, param);
-   history.push(`/category/${param}`);
-};
-const Introduction = ({ selectCategory }) => {
+const Introduction = () => {
    return (
       <div className="introduction">
          <h1 className="introduction__header">
@@ -15,7 +9,7 @@ const Introduction = ({ selectCategory }) => {
             it’s on Gutsy.
          </h1>
          <div className="introduction__catalog">
-            <div className="catalog__decor" onClick={() => onCategoryClick('Home & Living', 'home-and-living', selectCategory)}>
+            <div className="catalog__decor" onClick={() => history.push('/category/home-and-living')}>
                <div className="decor__content">
                   <h3 className="decor__header">Crafted for peak coziness</h3>
                   <div className="decor__link">
@@ -26,7 +20,7 @@ const Introduction = ({ selectCategory }) => {
                <img src="https://i.etsystatic.com/ij/1b08a3/1721469044/ij_halfxhalf.1721469044_kjdjh5u1.jpg?version=0" />
             </div>
             <div className="catalog__sub">
-               <div className="catalog__sub-wedding" onClick={() => onCategoryClick('Wedding & Party', 'wedding-and-party', selectCategory)}>
+               <div className="catalog__sub-wedding" onClick={() => history.push('/category/wedding-and-party')}>
                   <img src="https://i.etsystatic.com/ij/6f26c4/1768928451/ij_halfxhalf.1768928451_1gqi1iiu.jpg?version=0" />
                   <div className="wedding__content">
                      <h3 className="wedding__header">Plan your spectacular love fest.</h3>
@@ -36,10 +30,7 @@ const Introduction = ({ selectCategory }) => {
                      </div>
                   </div>
                </div>
-               <div
-                  className="catalog__sub-unique"
-                  onClick={() => onCategoryClick('Craft Supplies & Tools', 'craft-supplies-and-tools', selectCategory)}
-               >
+               <div className="catalog__sub-unique" onClick={() => history.push('/category/craft-supplies-and-tools')}>
                   Unique finds that ship for free <i className="fas fa-angle-right" />
                </div>
             </div>
@@ -70,7 +61,4 @@ const Introduction = ({ selectCategory }) => {
       </div>
    );
 };
-export default connect(
-   null,
-   { selectCategory }
-)(Introduction);
+export default Introduction;

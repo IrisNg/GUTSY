@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectCategory } from '../../actions';
 import history from '../../history';
-import productCategories from './productCategories';
+import productCategories from '../../productCategories';
 import GoogleOAuth from '../GoogleOAuth/GoogleOAuth';
 
 import './NavigationBar.css';
@@ -27,10 +26,6 @@ class NavigationBar extends React.Component {
          </li>
       ) : null;
    }
-   onCategoryClick = (name, param) => {
-      this.props.selectCategory(name, param);
-      history.push(`/category/${param}`);
-   };
    renderMainCategories() {
       return productCategories.map(mainCategory => {
          const { name, param } = mainCategory;
@@ -39,7 +34,7 @@ class NavigationBar extends React.Component {
                onMouseOver={() => this.onCategoryHover(name)}
                className={this.handleMainCategoryStyle(name)}
                key={param}
-               onClick={() => this.onCategoryClick(name, param)}
+               onClick={() => history.push(`/category/${param}`)}
             >
                {name}
             </li>
@@ -59,7 +54,7 @@ class NavigationBar extends React.Component {
          const { name, param, subCategories } = category;
          return (
             <li key={param} className="expanded-categories__category">
-               <span onClick={() => this.onCategoryClick(name, param)}>{name}</span>
+               <span onClick={() => history.push(`/category/${param}`)}>{name}</span>
                <ul className="expanded-categories__sub-categories">{this.renderSubCategories(subCategories)}</ul>
             </li>
          );
@@ -75,7 +70,6 @@ class NavigationBar extends React.Component {
             <li
                key={param}
                className="expanded-categories__sub-category"
-               onClick={() => this.onCategoryClick(name, param)}
                onClick={() => {
                   history.push(`/category/${param}`);
                }}
@@ -155,7 +149,4 @@ class NavigationBar extends React.Component {
 const mapStateToProps = state => {
    return { auth: state.auth };
 };
-export default connect(
-   mapStateToProps,
-   { selectCategory }
-)(NavigationBar);
+export default connect(mapStateToProps)(NavigationBar);

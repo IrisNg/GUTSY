@@ -1,23 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import history from '../../history';
-import { selectCategory } from '../../actions';
 
-const onCategoryClick = (name, param, selectCategory) => {
-   selectCategory(name, param);
-   history.push(`/category/${param}`);
-};
-
-const Gift = ({ selectCategory }) => {
+const Gift = () => {
    return (
       <div className="gift">
          <div className="gift__title">
             <h2 className="gift__header">Shop for gifts</h2>
-            <div className="gift__link">
-               See more
-            </div>
+            <div className="gift__link">See more</div>
          </div>
-         <ul className="gift__list" onClick={() => onCategoryClick('Wedding & Party', 'wedding-and-party', selectCategory)}>
+         <ul className="gift__list" onClick={() => history.push('/category/wedding-and-party')}>
             <li>
                <img src="https://i.etsystatic.com/15599295/d/il/5b5e83/1821870697/il_340x270.1821870697_d4du.jpg?version=0" />
                <p>Anniversary gifts</p>
@@ -46,7 +37,4 @@ const Gift = ({ selectCategory }) => {
       </div>
    );
 };
-export default connect(
-   null,
-   { selectCategory }
-)(Gift);
+export default Gift;

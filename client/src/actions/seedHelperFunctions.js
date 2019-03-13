@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Faker from 'faker';
-import productCategories from '../components/NavigationBar/productCategories';
+import productCategories from '../flatProductCategories';
 
 //Unsplash api keys
 //241dc288805f06bd42fa533605ecee15d51efcbee48ed56795546b7ad260a22e
@@ -11,13 +11,13 @@ import productCategories from '../components/NavigationBar/productCategories';
 //93379ab06bfd41ea4b27440a1e2d7d76c1ea3d91245b7952b17222f8f7d281bb
 //5a0c866a06a1917ee16b8299423796e7a6a2184a73f828f483f81704a013cad8
 
-export const loopSeedShop = async (flattenedCategories, numberOfSeed, ownerId) => {
+export const loopSeedShop = async (numberOfSeed, ownerId) => {
    var createdShops = [];
    //Number of rounds to seed categories
    for (let i = 1; i <= numberOfSeed; i++) {
       //Make a POST request to the server for each category
-      for (let i = 0; i < flattenedCategories.length - 1; i++) {
-         let category = flattenedCategories[i];
+      for (let i = 0; i < productCategories.length - 1; i++) {
+         let category = productCategories[i];
          var createdShop;
          if (i < 20) {
             //Limited by Unsplash api to only be able to make 50 requests per api key
@@ -35,6 +35,7 @@ export const loopSeedShop = async (flattenedCategories, numberOfSeed, ownerId) =
          } else {
             createdShop = await seedShop(category, ownerId, '5a0c866a06a1917ee16b8299423796e7a6a2184a73f828f483f81704a013cad8');
          }
+         console.log(i, createdShop.data);
          createdShops = [...createdShops, createdShop.data];
       }
    }
@@ -63,27 +64,7 @@ const seedShop = async (category, ownerId, apiKey) => {
    };
    //Post to server
    const createdShop = await axios.post('/shops', formattedForm);
-   console.log(createdShop);
    return createdShop;
-};
-
-//Flatten the nested array from productCategories file into a single layer array -> [{name: '', param: ''}, {category}, ...]
-export const flattenCategories = () => {
-   const flattenedCategories = [];
-   for (let mainCategory of productCategories) {
-      flattenedCategories.push({ name: mainCategory.name, param: mainCategory.param });
-      if (mainCategory.categories.length > 0) {
-         for (let category of mainCategory.categories) {
-            flattenedCategories.push({ name: category.name, param: category.param });
-            if (category.subCategories && category.subCategories.length > 0) {
-               for (let subCategory of category.subCategories) {
-                  flattenedCategories.push({ name: subCategory.name, param: subCategory.param });
-               }
-            }
-         }
-      }
-   }
-   return flattenedCategories;
 };
 
 export const getNumberOfSeedRounds = getState => {

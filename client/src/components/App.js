@@ -3,7 +3,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
 
 import NavigationBar from './NavigationBar/NavigationBar';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import Homepage from './Homepage/Homepage';
 import ShopCreate from './ShopCreate/ShopCreate';
 import CategoryShow from './CategoryShow/CategoryShow';
