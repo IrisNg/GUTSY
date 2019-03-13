@@ -2,6 +2,17 @@ var express = require('express'),
    router = express.Router(),
    Shop = require('../models/Shop');
 
+router.post('/shops/searches', (req, res) => {
+   //Use regular expression to search for productName or shopName containing the search term
+   var regExp = new RegExp(req.body.searchTerm, 'i');
+   Shop.find({ $or: [{ productName: { $regex: regExp } }, { shopName: { $regex: regExp } }] }, (err, foundShops) => {
+      if (err) {
+         res.status(400).json('No search result');
+      } else {
+         res.json(foundShops);
+      }
+   });
+});
 router.post('/shops', (req, res) => {
    Shop.create(req.body, (err, createdShop) => {
       if (err) {

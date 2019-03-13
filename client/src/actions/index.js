@@ -17,6 +17,12 @@ export const fetchShops = category => async dispatch => {
    dispatch({ type: 'FETCH_SHOPS', payload: response.data });
 };
 
+export const fetchSearches = searchTerm => async dispatch => {
+   const response = await axios.post('/shops/searches', { searchTerm });
+   dispatch({ type: 'FETCH_SEARCHES', payload: { searchTerm, results: response.data } });
+   history.push('/search');
+};
+
 export const createShop = ({ shopName, productName, productImage, productPrice, ...rest }) => async (dispatch, getState) => {
    const ownerId = getState().auth.userDetails.userId;
    //Combine the selected categories into an array

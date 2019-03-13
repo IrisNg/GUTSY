@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Show from './Show';
 import { fetchShops, selectCategory } from '../../actions';
-import Shop from '../Shop/Shop';
-import './CategoryShow.css';
 
 class CategoryShow extends Component {
    state = {
@@ -21,27 +20,22 @@ class CategoryShow extends Component {
          props.selectCategory(category);
          return { currentCategory: category };
       }
+      return null;
    }
-   renderShops() {
-      const { shops, currentUserId } = this.props;
-      return shops.map(shop => {
-         return <Shop shop={shop} key={shop._id} currentUserId={currentUserId} />;
-      });
-   }
+
    render() {
       const {
          category: { name }
       } = this.props;
       return (
-         <div className="category-show">
-            <div className="category-show__header">{name}</div>
-            <div className="category-show__shops">{this.renderShops()}</div>
+         <div>
+            <Show name={name} />
          </div>
       );
    }
 }
 const mapStateToProps = state => {
-   return { shops: state.shops, currentUserId: state.auth.userDetails.userId, category: state.category };
+   return { category: state.category };
 };
 export default connect(
    mapStateToProps,

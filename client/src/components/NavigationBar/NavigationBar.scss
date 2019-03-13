@@ -14,16 +14,16 @@
         font-size: 2.3rem;
         cursor: pointer;
     }
-    .main-nav__search {
+    .search-bar {
         @extend %attached-field;
         width: 100%;
         margin-left: 1.5rem;
-        .main-nav__search-input {
-            @extend %attached-input;
-        }
-        .main-nav__search-button {
-            @extend %attached-button;
-        }
+    }
+    .search-bar__input {
+        @extend %attached-input;
+    }
+    .search-bar__button {
+        @extend %attached-button;
     }
     .main-nav__items {
         display: flex;

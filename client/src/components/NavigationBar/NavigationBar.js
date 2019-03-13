@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 import history from '../../history';
 import productCategories from '../../productCategories';
 import GoogleOAuth from '../GoogleOAuth/GoogleOAuth';
@@ -21,7 +22,7 @@ class NavigationBar extends React.Component {
    renderUser(userDetails) {
       return userDetails.username ? (
          <li className="main-nav__user">
-            <img src={userDetails.userImage} className="main-nav__user-image" />
+            <img src={userDetails.userImage} className="main-nav__user-image" alt="user avatar from google" />
             {userDetails.username}
          </li>
       ) : null;
@@ -68,7 +69,7 @@ class NavigationBar extends React.Component {
          const { name, param } = subCategory;
          return (
             <li
-               key={param}
+               key={param || 'null'}
                className="expanded-categories__sub-category"
                onClick={() => {
                   history.push(`/category/${param}`);
@@ -110,10 +111,7 @@ class NavigationBar extends React.Component {
                      <Link to="/">Gutsy</Link>
                   </h1>
                   {/* Search bar */}
-                  <div className="main-nav__search">
-                     <input type="text" className="main-nav__search-input" placeholder="Search for items or shops" />
-                     <button className="main-nav__search-button">Search</button>
-                  </div>
+                  <SearchBar />
                </div>
                {/* Buttons */}
                <ul className="main-nav__items">

@@ -1,23 +1,23 @@
-.category-show {
+.show {
   margin: 0 5rem;
   padding: 0.6rem 1rem; }
 
-.category-show__header {
+.show__header {
   font-weight: 300;
   font-family: 'Merriweather', serif;
   letter-spacing: 0.03rem; }
 
-.category-show {
+.show {
   margin-top: 2rem; }
 
-.category-show__header {
+.show__header {
   text-align: center;
   font-weight: 400;
-  margin-top: .6rem;
-  margin-bottom: .5rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
   font-size: 1.1rem; }
 
-.category-show__shops {
+.show__shops {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
@@ -59,4 +59,4 @@
   .shop__edit:hover {
     transform: scale(1.2); }
 
-/*# sourceMappingURL=CategoryShow.css.map */
+/*# sourceMappingURL=Show.css.map */

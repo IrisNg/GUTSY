@@ -17,11 +17,14 @@ const Introduction = () => {
                      <i className="fas fa-angle-right" />
                   </div>
                </div>
-               <img src="https://i.etsystatic.com/ij/1b08a3/1721469044/ij_halfxhalf.1721469044_kjdjh5u1.jpg?version=0" />
+               <img
+                  src="https://i.etsystatic.com/ij/1b08a3/1721469044/ij_halfxhalf.1721469044_kjdjh5u1.jpg?version=0"
+                  alt="stack of comfortable looking sweaters"
+               />
             </div>
             <div className="catalog__sub">
                <div className="catalog__sub-wedding" onClick={() => history.push('/category/wedding-and-party')}>
-                  <img src="https://i.etsystatic.com/ij/6f26c4/1768928451/ij_halfxhalf.1768928451_1gqi1iiu.jpg?version=0" />
+                  <img src="https://i.etsystatic.com/ij/6f26c4/1768928451/ij_halfxhalf.1768928451_1gqi1iiu.jpg?version=0" alt="wedding cake" />
                   <div className="wedding__content">
                      <h3 className="wedding__header">Plan your spectacular love fest.</h3>
                      <div className="wedding__link">

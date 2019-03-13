@@ -22,17 +22,17 @@ class GoogleOAuth extends Component {
       });
    }
    onAuthChange = isSignedIn => {
-      const userId = this.auth.currentUser.get().getId();
-      const username = this.auth.currentUser
-         .get()
-         .getBasicProfile()
-         .getName();
-      const userImage = this.auth.currentUser
-         .get()
-         .getBasicProfile()
-         .getImageUrl();
-      //Store the userId in the Redux store if user is Signed In
+      //Store the userId, username & userImage in the Redux store if user is Signed In
       if (isSignedIn) {
+         const userId = this.auth.currentUser.get().getId();
+         const username = this.auth.currentUser
+            .get()
+            .getBasicProfile()
+            .getName();
+         const userImage = this.auth.currentUser
+            .get()
+            .getBasicProfile()
+            .getImageUrl();
          this.props.signIn({ userId, username, userImage });
       } else {
          this.props.signOut();

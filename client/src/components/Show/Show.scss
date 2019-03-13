@@ -1,19 +1,19 @@
 @import '_Default';
-.category-show {
+.show {
     @extend %container;
     margin-top: 2rem;
 }
 
-.category-show__header {
+.show__header {
     @extend %classy-font;
     text-align: center;
     font-weight: 400;
-    margin-top: .6rem;
-    margin-bottom: .5rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
-.category-show__shops {
+.show__shops {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
