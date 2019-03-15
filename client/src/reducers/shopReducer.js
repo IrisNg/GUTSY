@@ -5,9 +5,16 @@ export const shopReducer = (state = [], action) => {
       case 'FETCH_SEARCHES':
          return [...action.payload.results];
       case 'CREATE_SHOP':
-         return [...state, action.payload];
+         if (action.payload) {
+            return [...state, action.payload];
+         } else {
+            return state;
+         }
       case 'SEED_SHOPS':
          return state;
+      case 'FETCH_SHOP' || 'UPDATE_SHOP':
+         const remainingShops = state.filter(shop => shop._id !== action.payload._id);
+         return [...remainingShops, action.payload];
       default:
          return state;
    }

@@ -7,7 +7,7 @@ export class Show extends Component {
    renderShops() {
       const { shops, currentUserId } = this.props;
       return shops.map(shop => {
-         return <Shop shop={shop} key={shop._id} currentUserId={currentUserId} />;
+         return <Shop {...shop} key={shop._id} currentUserId={currentUserId} />;
       });
    }
    render() {

@@ -9,8 +9,11 @@ class CategoryShow extends Component {
    };
    componentDidMount() {
       const { category } = this.props.match.params;
-      this.props.fetchShops(category);
-      this.props.selectCategory(category);
+      const { param } = this.props.category;
+      if (category !== param) {
+         this.props.fetchShops(category);
+         this.props.selectCategory(category);
+      }
       this.setState({ currentCategory: category });
    }
    static getDerivedStateFromProps(props, state) {

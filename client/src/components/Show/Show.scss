@@ -1,65 +1,20 @@
 @import '_Default';
 .show {
-    @extend %container;
-    margin-top: 2rem;
+   @extend %container;
+   margin-top: 2rem;
 }
 
 .show__header {
-    @extend %classy-font;
-    text-align: center;
-    font-weight: 400;
-    margin-top: 0.6rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+   @extend %classy-font;
+   text-align: center;
+   font-weight: 400;
+   margin-top: 0.6rem;
+   margin-bottom: 0.5rem;
+   font-size: 1.1rem;
 }
 
 .show__shops {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.shop {
-    width: 14rem;
-    margin: 1.4rem 0.7rem;
-    cursor: pointer;
-    position: relative;
-    &:hover .shop__image {
-        box-shadow: 3px 3px 3px #bcbcbc;
-    }
-}
-
-.shop__image {
-    width: 100%;
-    object-fit: cover;
-    height: 9rem;
-    border-radius: 4px;
-}
-
-.shop__product-name {
-    font-weight: 400;
-    font-size: 0.9rem;
-    color: darken(map-get($font-color, light), 40%);
-    margin: 0.3rem 0;
-}
-
-.shop__shop-name {
-    color: lighten(map-get($font-color, light), 10%);
-    font-size: 0.75rem;
-    font-weight: 400;
-}
-
-.shop__price {
-    font-size: 1.15rem;
-}
-
-.shop__edit {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: white;
-    margin: 0.3rem;
-    &:hover {
-        transform: scale(1.2);
-    }
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }

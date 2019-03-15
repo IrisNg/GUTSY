@@ -4,22 +4,35 @@
 
 Oh shoot, is Etsy going to come for me if I clone their website?
 
+## Features Implemented
 
-## Features
+* Navigation Bar & Expanded Categories Menu
+* Create Shop
+* Search function
+* Show by category
+
+## Technologies Used
+
+***Newly Learnt
+
+* Redux-form
+* SASS
+* Google OAuth client side
+
+* React
+* Redux
+* React-router
+* Javascript
+* CSS
 
 ## Technologies to experiment
 
-* SASS
-* Redux-form
 * Stripe
 * Jest to unit test
-* Google OAuth client side
 
 ## Important Files
 
-
-
-## Road Blocks 
+## Road Blocks
 
 ## Installation Instructions
 
@@ -29,8 +42,7 @@ Oh shoot, is Etsy going to come for me if I clone their website?
 
 ### Steps
 
-
 ## Contributors
 
-Created by Iris Ng. 
+Created by Iris Ng.
 Feel free to hit me up with those bug reports or places where my code can use some improvement :) thanks!

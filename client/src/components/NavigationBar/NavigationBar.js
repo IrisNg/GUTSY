@@ -35,7 +35,7 @@ class NavigationBar extends React.Component {
                onMouseOver={() => this.onCategoryHover(name)}
                className={this.handleMainCategoryStyle(name)}
                key={param}
-               onClick={() => history.push(`/category/${param}`)}
+               onClick={() => this.onCategoryClick(param)}
             >
                {name}
             </li>
@@ -47,6 +47,10 @@ class NavigationBar extends React.Component {
       const categoryData = productCategories.find(mainCategory => mainCategory.name === activeCategory);
       this.setState({ activeCategory: categoryData });
    };
+   onCategoryClick = param => {
+      this.setState({ activeCategory: null });
+      history.push(`/category/${param}`);
+   };
    renderCategories() {
       if (!this.state.activeCategory) {
          return null;
@@ -55,7 +59,7 @@ class NavigationBar extends React.Component {
          const { name, param, subCategories } = category;
          return (
             <li key={param} className="expanded-categories__category">
-               <span onClick={() => history.push(`/category/${param}`)}>{name}</span>
+               <span onClick={() => this.onCategoryClick(param)}>{name}</span>
                <ul className="expanded-categories__sub-categories">{this.renderSubCategories(subCategories)}</ul>
             </li>
          );
@@ -68,20 +72,14 @@ class NavigationBar extends React.Component {
       return subCategories.map(subCategory => {
          const { name, param } = subCategory;
          return (
-            <li
-               key={param || 'null'}
-               className="expanded-categories__sub-category"
-               onClick={() => {
-                  history.push(`/category/${param}`);
-               }}
-            >
+            <li key={param || 'null'} className="expanded-categories__sub-category" onClick={() => this.onCategoryClick(param)}>
                {name}
             </li>
          );
       });
    }
    handleCategoriesDisplay() {
-      if (this.state.url === '/create-shop') {
+      if (this.state.url === '/shop/') {
          return '--inactive';
       }
       return '';
@@ -116,7 +114,7 @@ class NavigationBar extends React.Component {
                {/* Buttons */}
                <ul className="main-nav__items">
                   <li className="main-nav__sell">
-                     <Link to="/create-shop">Sell on Gutsy</Link>
+                     <Link to="/shop/create">Sell on Gutsy</Link>
                   </li>
                   {this.renderUser(userDetails)}
                   <li className="main-nav__auth">

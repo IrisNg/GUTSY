@@ -22,11 +22,16 @@ export const fetchSearches = searchTerm => async dispatch => {
    dispatch({ type: 'FETCH_SEARCHES', payload: { searchTerm, results: response.data } });
    history.push('/search');
 };
-
-export const createShop = ({ shopName, productName, productImage, productPrice, ...rest }) => async (dispatch, getState) => {
-   const ownerId = getState().auth.userDetails.userId;
+const combineCategories = formValues => {
+   const { mainCategory, category, subCategory } = formValues;
    //Combine the selected categories into an array
-   const categoriesName = Object.values(rest);
+   const categoriesName = [mainCategory];
+   if (category) {
+      categoriesName.push(category);
+   }
+   if (subCategory) {
+      categoriesName.push(subCategory);
+   }
    //['Clothing & Shoes', ...] -> ['clothing-and-shoes', ...]
    const categoriesParam = categoriesName.map(name => {
       var param = name.replace(/\s/g, '-').toLowerCase();
@@ -34,19 +39,25 @@ export const createShop = ({ shopName, productName, productImage, productPrice, 
       param = param.replace(/'/g, '');
       return param;
    });
+   return { categoriesName, categoriesParam };
+};
+export const createShop = formValues => async (dispatch, getState) => {
+   const ownerId = getState().auth.userDetails.userId;
+   const combinedCategories = combineCategories(formValues);
    const formattedForm = {
-      shopName,
-      productName,
-      productImage,
-      productPrice,
-      categoriesName,
-      categoriesParam,
+      ...formValues,
+      ...combinedCategories,
       ownerId
    };
    const createdShop = await axios.post('/shops', formattedForm);
-   console.log(createdShop);
-   dispatch({ type: 'CREATE_SHOP', payload: createdShop.data });
-   history.push(`/category/${categoriesParam[0]}`);
+   console.log('createdShop', createdShop);
+   //Store the created shop only if it is of the last visited category
+   if (createdShop.data.categoriesName.includes(getState().category.name)) {
+      dispatch({ type: 'CREATE_SHOP', payload: createdShop.data });
+   } else {
+      dispatch({ type: 'CREATE_SHOP' });
+   }
+   history.goBack();
 };
 
 export const seedShops = () => async (dispatch, getState) => {
@@ -62,7 +73,21 @@ export const seedShops = () => async (dispatch, getState) => {
       })
       .catch(err => console.log(err));
 };
-
+export const fetchShop = id => async dispatch => {
+   const response = await axios.get(`/shops/${id}`);
+   dispatch({ type: 'FETCH_SHOP', payload: response.data });
+};
+export const updateShop = (id, formValues) => async dispatch => {
+   const combinedCategories = combineCategories(formValues);
+   const formattedForm = {
+      ...formValues,
+      ...combinedCategories
+   };
+   const updatedShop = await axios.put(`/shops/${id}`, formattedForm);
+   console.log('updatedShop', updatedShop.data);
+   dispatch({ type: 'UPDATE_SHOP', payload: updatedShop.data });
+   history.goBack();
+};
 export const signIn = userDetails => {
    return {
       type: 'SIGN_IN',

@@ -1,0 +1,45 @@
+.shop {
+  width: 14rem;
+  margin: 1.4rem 0.7rem;
+  cursor: pointer;
+  text-align: left;
+  position: relative; }
+  .shop:hover .shop__image {
+    box-shadow: 3px 3px 3px #bcbcbc; }
+
+.shop__image {
+  width: 100%;
+  object-fit: cover;
+  height: 9rem;
+  border-radius: 4px; }
+
+.shop__content {
+  padding: 0 0.3rem; }
+
+.shop__product-name {
+  font-weight: 400;
+  word-wrap: break-word;
+  font-size: 0.9rem;
+  color: black;
+  margin: 0.3rem 0; }
+
+.shop__shop-name {
+  color: #797979;
+  font-size: 0.75rem;
+  word-wrap: break-word;
+  font-weight: 400; }
+
+.shop__price {
+  font-size: 1.15rem;
+  word-wrap: break-word; }
+
+.shop__edit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  margin: 0.3rem; }
+  .shop__edit:hover {
+    transform: scale(1.2); }
+
+/*# sourceMappingURL=Shop.css.map */

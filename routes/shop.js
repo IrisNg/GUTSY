@@ -32,5 +32,24 @@ router.get('/categories/:category', (req, res) => {
       }
    });
 });
+router.get('/shops/:id', (req, res) => {
+   Shop.findById(req.params.id, (err, foundShop) => {
+      if (err) {
+         res.status(400).json('Could not find the shop you were looking for');
+      } else {
+         res.json(foundShop);
+      }
+   });
+});
+router.put('/shops/:id', (req, res) => {
+   Shop.findByIdAndUpdate(req.params.id, req.body, (err, updatedShop) => {
+      if (err) {
+         console.log(err);
+         res.status(400).json('Something went wrong while updating the shop');
+      } else {
+         res.json(updatedShop);
+      }
+   });
+});
 
 module.exports = router;
