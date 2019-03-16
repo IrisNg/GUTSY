@@ -181,7 +181,7 @@ const validate = ({ shopName, productName, productImage, productPrice, mainCateg
    if (!productImage) {
       errors.productImage = 'Insert an url to a picture representing your product';
    }
-   if (productPrice && /[^0-9]/i.test(productPrice)) {
+   if (productPrice && /[^0-9.]/i.test(productPrice)) {
       errors.productPrice = 'Use ONLY numerical values';
    }
    if (!productPrice) {
