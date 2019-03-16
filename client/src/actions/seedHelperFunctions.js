@@ -69,7 +69,7 @@ const seedShop = async (category, ownerId, apiKey) => {
 
 export const getNumberOfSeedRounds = getState => {
    //Get inputted number of seed rounds from redux-state
-   var formValues = getState().form.shopCreate;
+   var formValues = getState().form.shopForm;
    var numberOfSeed = 1;
    //Check if user actually inputted a value for seedRounds first
    if (formValues.values && formValues.values.seedRounds) {
