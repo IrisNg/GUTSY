@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import Basket from './Basket';
 import history from '../../history';
 import productCategories from '../../productCategories';
 import GoogleOAuth from '../GoogleOAuth/GoogleOAuth';
@@ -126,8 +127,7 @@ class NavigationBar extends React.Component {
                      <span>Discover</span>
                   </li>
                   <li className="main-nav__basket">
-                     <i className="fas fa-shopping-basket" />
-                     <span>Basket</span>
+                     <Basket />
                   </li>
                </ul>
             </div>

@@ -96,6 +96,13 @@ export const deleteShop = id => async dispatch => {
    dispatch({ type: 'DELETE_SHOP', payload: id });
    history.goBack();
 };
+export const addShopToBasket = shop => {
+   return {
+      type: 'SHOP_BASKET',
+      payload: shop
+   };
+};
+
 export const signIn = userDetails => {
    return {
       type: 'SIGN_IN',
@@ -107,3 +114,4 @@ export const signOut = () => {
       type: 'SIGN_OUT'
    };
 };
+

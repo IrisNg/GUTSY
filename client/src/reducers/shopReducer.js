@@ -22,3 +22,12 @@ export const shopReducer = (state = [], action) => {
          return state;
    }
 };
+
+export const shopBasketReducer = (state = [], action) => {
+   switch (action.type) {
+      case 'SHOP_BASKET':
+         return [...state, action.payload];
+      default:
+         return state;
+   }
+};

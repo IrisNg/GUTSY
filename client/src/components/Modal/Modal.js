@@ -5,7 +5,7 @@ import './Modal.css';
 
 const Modal = ({ onAccept, item }) => {
    return ReactDOM.createPortal(
-      <div className="modal__background">
+      <div className="modal__background" onClick={() => history.goBack()}>
          <div className="modal__prompt">
             <p className="modal__prompt-message">Are you sure you want to delete this {item}?</p>
             <div className="modal__prompt-buttons">
