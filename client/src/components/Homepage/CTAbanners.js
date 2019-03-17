@@ -13,7 +13,7 @@ const CTAbanners = () => {
             <div className="banner__content">
                <h1 className="banner__header">Start selling on Gutsy</h1>
                <p className="banner__description">Million of shoppers can't wait to see what you have in store.</p>
-               <Link to="/create-shop">
+               <Link to="/shop/create">
                   <span>Open a shop today</span> <i className="fas fa-angle-right" />
                </Link>
             </div>

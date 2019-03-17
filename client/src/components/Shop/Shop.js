@@ -2,10 +2,11 @@ import React from 'react';
 import history from '../../history';
 import './Shop.css';
 
-const renderEdit = (currentUserId, ownerId, _id) => {
+const renderOwnerButtons = (currentUserId, ownerId, _id) => {
    return currentUserId === ownerId ? (
-      <div className="shop__edit" onClick={() => history.push(`/shop/${_id}/edit`)}>
-         <i className="fas fa-pen" />
+      <div className="shop__owner-buttons">
+         <i className="fas fa-pen" onClick={() => history.push(`/shop/${_id}/edit`)} />
+         <i className="fas fa-trash-alt" onClick={() => history.push(`/shop/${_id}/delete`)}/>
       </div>
    ) : null;
 };
@@ -17,7 +18,7 @@ const Shop = ({ productImage, productName, shopName, productPrice, ownerId, curr
             <h3 className="shop__product-name">{productName}</h3>
             <h5 className="shop__shop-name">{shopName}</h5>
             <h2 className="shop__price">{productPrice ? `$${productPrice}` : ''}</h2>
-            {renderEdit(currentUserId, ownerId, _id)}
+            {renderOwnerButtons(currentUserId, ownerId, _id)}
          </div>
       </div>
    );

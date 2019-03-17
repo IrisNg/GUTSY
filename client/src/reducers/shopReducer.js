@@ -15,6 +15,9 @@ export const shopReducer = (state = [], action) => {
       case 'FETCH_SHOP' || 'UPDATE_SHOP':
          const remainingShops = state.filter(shop => shop._id !== action.payload._id);
          return [...remainingShops, action.payload];
+      case 'DELETE_SHOP':
+         const shopsExcludeDeleted = state.filter(shop => shop._id !== action.payload);
+         return [...shopsExcludeDeleted];
       default:
          return state;
    }

@@ -22,6 +22,7 @@ export const fetchSearches = searchTerm => async dispatch => {
    dispatch({ type: 'FETCH_SEARCHES', payload: { searchTerm, results: response.data } });
    history.push('/search');
 };
+//Helper function
 const combineCategories = formValues => {
    const { mainCategory, category, subCategory } = formValues;
    //Combine the selected categories into an array
@@ -86,6 +87,13 @@ export const updateShop = (id, formValues) => async dispatch => {
    const updatedShop = await axios.put(`/shops/${id}`, formattedForm);
    console.log('updatedShop', updatedShop.data);
    dispatch({ type: 'UPDATE_SHOP', payload: updatedShop.data });
+   history.goBack();
+};
+
+export const deleteShop = id => async dispatch => {
+   await axios.delete(`/shops/${id}`);
+   console.log('shop deleted!');
+   dispatch({ type: 'DELETE_SHOP', payload: id });
    history.goBack();
 };
 export const signIn = userDetails => {

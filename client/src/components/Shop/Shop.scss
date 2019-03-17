@@ -41,13 +41,18 @@
    word-wrap: break-word;
 }
 
-.shop__edit {
+.shop__owner-buttons {
    position: absolute;
    right: 0;
    top: 0;
    color: white;
-   margin: 0.3rem;
-   &:hover {
-      transform: scale(1.2);
+   margin: 0.7rem 0.5rem;
+   i {
+      margin-bottom: 0.7rem;
+      display: block;
+      font-size: 0.9rem;
+      &:hover {
+         transform: scale(1.2);
+      }
    }
 }

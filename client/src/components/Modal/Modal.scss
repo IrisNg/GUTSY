@@ -1,0 +1,42 @@
+@import '_Default';
+.modal__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__prompt {
+    width: 400px;
+    height: 180px;
+    padding: 2rem;
+    border: 1.5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.modal__prompt-message {
+    text-align: justify;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.modal__prompt-buttons {
+    display: flex;
+    justify-content: flex-end;
+    button {
+        margin-left: 0.7rem;
+        @extend %button;
+        i {
+            margin-right: .5rem;
+        }
+    }
+}

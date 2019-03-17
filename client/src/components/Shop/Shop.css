@@ -33,13 +33,17 @@
   font-size: 1.15rem;
   word-wrap: break-word; }
 
-.shop__edit {
+.shop__owner-buttons {
   position: absolute;
   right: 0;
   top: 0;
   color: white;
-  margin: 0.3rem; }
-  .shop__edit:hover {
-    transform: scale(1.2); }
+  margin: 0.7rem 0.5rem; }
+  .shop__owner-buttons i {
+    margin-bottom: 0.7rem;
+    display: block;
+    font-size: 0.9rem; }
+    .shop__owner-buttons i:hover {
+      transform: scale(1.2); }
 
 /*# sourceMappingURL=Shop.css.map */
