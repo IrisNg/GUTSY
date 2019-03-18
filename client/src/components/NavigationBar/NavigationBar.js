@@ -23,7 +23,7 @@ class NavigationBar extends React.Component {
    }
    renderUser(userDetails) {
       return userDetails.username ? (
-         <li className="main-nav__user">
+         <li className="main-nav__user" key="user">
             <img src={userDetails.userImage} className="main-nav__user-image" alt="user avatar from google" />
             {userDetails.username}
          </li>
@@ -44,7 +44,7 @@ class NavigationBar extends React.Component {
             <li
                onMouseOver={() => this.onCategoryHover(name)}
                className={this.handleMainCategoryStyle(name)}
-               key={param}
+               key={`main${param}`}
                onClick={() => this.onCategoryClick(param)}
             >
                {name}
@@ -68,7 +68,7 @@ class NavigationBar extends React.Component {
       return this.state.activeCategory.categories.map(category => {
          const { name, param, subCategories } = category;
          return (
-            <li key={param} className="expanded-categories__category">
+            <li key={`cat${param}`} className="expanded-categories__category">
                <span onClick={() => this.onCategoryClick(param)}>{name}</span>
                <ul className="expanded-categories__sub-categories">{this.renderSubCategories(subCategories)}</ul>
             </li>
@@ -82,7 +82,7 @@ class NavigationBar extends React.Component {
       return subCategories.map(subCategory => {
          const { name, param } = subCategory;
          return (
-            <li key={param || 'null'} className="expanded-categories__sub-category" onClick={() => this.onCategoryClick(param)}>
+            <li key={`sub${param}`} className="expanded-categories__sub-category" onClick={() => this.onCategoryClick(param)}>
                {name}
             </li>
          );
@@ -123,19 +123,19 @@ class NavigationBar extends React.Component {
                </div>
                {/* Buttons */}
                <ul className="main-nav__items">
-                  <li className="main-nav__sell">
+                  <li className="main-nav__sell" key="sell">
                      <Link to="/shop/create">Sell on Gutsy</Link>
                   </li>
                   {this.renderUser(userDetails)}
-                  <li className="main-nav__auth">
+                  <li className="main-nav__auth" key="auth">
                      <i className="fab fa-google-plus-g" />
                      <GoogleOAuth isSignedIn={isSignedIn} />
                   </li>
-                  <li className="main-nav__discover" onClick={this.onDiscoverClick}>
+                  <li className="main-nav__discover" onClick={this.onDiscoverClick} key="discover">
                      <i className="fas fa-toolbox" />
                      <span>Discover</span>
                   </li>
-                  <li className="main-nav__basket">
+                  <li className="main-nav__basket" key="basket">
                      <Basket />
                   </li>
                </ul>

@@ -1,6 +1,13 @@
 import React from 'react';
 import history from '../../history';
+import flatProductCategories from '../../flatProductCategories';
 
+const onUniqueClick = () => {
+   const randomIndex = Math.floor(Math.random() * (flatProductCategories.length - 1));
+   const randomParam = flatProductCategories[randomIndex].param;
+   //Navigate user to the random Category page
+   history.push(`/category/${randomParam}`);
+};
 const Introduction = () => {
    return (
       <div className="introduction">
@@ -33,7 +40,7 @@ const Introduction = () => {
                      </div>
                   </div>
                </div>
-               <div className="catalog__sub-unique" onClick={() => history.push('/category/craft-supplies-and-tools')}>
+               <div className="catalog__sub-unique" onClick={onUniqueClick}>
                   Unique finds that ship for free <i className="fas fa-angle-right" />
                </div>
             </div>
