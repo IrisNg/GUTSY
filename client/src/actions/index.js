@@ -3,6 +3,11 @@ import history from '../history';
 import { loopSeedShop, getNumberOfSeedRounds } from './seedHelperFunctions';
 import productCategories from '../flatProductCategories';
 
+export const fetchShops = () => async dispatch => {
+   const fetchedShops = await axios.get('/shops');
+   dispatch({ type: 'FETCH_SHOPS', payload: fetchedShops.data });
+};
+
 export const selectCategory = param => {
    //Use the param to find the name of the category also
    const category = productCategories.find(category => category.param === param);
@@ -12,14 +17,14 @@ export const selectCategory = param => {
    };
 };
 
-export const fetchShops = category => async dispatch => {
-   const response = await axios.get(`/categories/${category}`);
-   dispatch({ type: 'FETCH_SHOPS', payload: response.data });
+export const fetchCategoryShops = category => async dispatch => {
+   const fetchedCategoryShops = await axios.get(`/categories/${category}`);
+   dispatch({ type: 'FETCH_CATEGORY_SHOPS', payload: fetchedCategoryShops.data });
 };
 
 export const fetchSearches = searchTerm => async dispatch => {
-   const response = await axios.post('/shops/searches', { searchTerm });
-   dispatch({ type: 'FETCH_SEARCHES', payload: { searchTerm, results: response.data } });
+   const fetchedSearches = await axios.post('/shops/searches', { searchTerm });
+   dispatch({ type: 'FETCH_SEARCHES', payload: { searchTerm, results: fetchedSearches.data } });
    history.push('/search');
 };
 //Helper function
@@ -75,8 +80,8 @@ export const seedShops = () => async (dispatch, getState) => {
       .catch(err => console.log(err));
 };
 export const fetchShop = id => async dispatch => {
-   const response = await axios.get(`/shops/${id}`);
-   dispatch({ type: 'FETCH_SHOP', payload: response.data });
+   const fetchedShop = await axios.get(`/shops/${id}`);
+   dispatch({ type: 'FETCH_SHOP', payload: fetchedShop.data });
 };
 export const updateShop = (id, formValues) => async dispatch => {
    const combinedCategories = combineCategories(formValues);
@@ -114,4 +119,3 @@ export const signOut = () => {
       type: 'SIGN_OUT'
    };
 };
-

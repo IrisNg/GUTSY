@@ -44,7 +44,7 @@ const Introduction = () => {
                   <i className="fas fa-check" />
                   <h5 className="introduction__list-header">Unique everything</h5>
                </div>
-               <p>We have millions of one-of-a-kind iteams, so you can find whatever you need (or really, really want).</p>
+               <p>We have millions of one-of-a-kind items, so you can find whatever you need (or really, really want).</p>
             </li>
             <li>
                <div>

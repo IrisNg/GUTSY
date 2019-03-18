@@ -26,7 +26,7 @@ class Shop extends React.Component {
             <img src={productImage} className="shop__image" alt={productName} />
             <div className="shop__content">
                <h3 className="shop__product-name">{productName}</h3>
-               <h5 className="shop__shop-name">{shopName}</h5>
+               <h5 className="shop__shop-name">{shopName.length > 30 ? shopName.substring(0, 30).concat('...') : shopName}</h5>
                <h2 className="shop__price">{productPrice ? `$${productPrice}` : ''}</h2>
                {this.renderOwnerButtons()}
             </div>

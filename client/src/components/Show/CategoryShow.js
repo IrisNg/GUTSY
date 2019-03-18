@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Show from './Show';
-import { fetchShops, selectCategory } from '../../actions';
+import { fetchCategoryShops, selectCategory } from '../../actions';
 
 class CategoryShow extends Component {
    state = {
@@ -11,7 +11,7 @@ class CategoryShow extends Component {
       const { category } = this.props.match.params;
       const { param } = this.props.category;
       if (category !== param) {
-         this.props.fetchShops(category);
+         this.props.fetchCategoryShops(category);
          this.props.selectCategory(category);
       }
       this.setState({ currentCategory: category });
@@ -19,7 +19,7 @@ class CategoryShow extends Component {
    static getDerivedStateFromProps(props, state) {
       const { category } = props.match.params;
       if (category !== state.currentCategory) {
-         props.fetchShops(category);
+         props.fetchCategoryShops(category);
          props.selectCategory(category);
          return { currentCategory: category };
       }
@@ -42,5 +42,5 @@ const mapStateToProps = state => {
 };
 export default connect(
    mapStateToProps,
-   { fetchShops, selectCategory }
+   { fetchCategoryShops, selectCategory }
 )(CategoryShow);

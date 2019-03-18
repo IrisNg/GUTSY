@@ -1,6 +1,6 @@
 import React from 'react';
 import Introduction from './Introduction';
-import Popular from './Popular';
+import Latest from './Latest';
 import Gift from './Gift';
 import CTAbanners from './CTAbanners';
 import './Homepage.css';
@@ -9,7 +9,7 @@ const Homepage = () => {
    return (
       <div>
          <Introduction />
-         {/* <Popular /> */}
+         <Latest />
          <Gift />
          <CTAbanners />
       </div>

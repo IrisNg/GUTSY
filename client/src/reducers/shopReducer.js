@@ -2,6 +2,8 @@ export const shopReducer = (state = [], action) => {
    switch (action.type) {
       case 'FETCH_SHOPS':
          return [...action.payload];
+      case 'FETCH_CATEGORY_SHOPS':
+         return [...action.payload];
       case 'FETCH_SEARCHES':
          return [...action.payload.results];
       case 'CREATE_SHOP':

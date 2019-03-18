@@ -1,4 +1,4 @@
-@import "../_Default";
+@import '../_Default';
 //Introduction
 .introduction {
     @extend %container;
@@ -51,7 +51,7 @@
 .decor__header {
     @extend %classy-font;
     font-size: 1.5rem;
-    margin: 0 0 .8rem 0;
+    margin: 0 0 0.8rem 0;
 }
 
 .catalog__sub {
@@ -82,7 +82,7 @@
 
 .wedding__header {
     line-height: 1.4rem;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
 }
 
 .catalog__sub-unique {
@@ -95,14 +95,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: .92rem;
+    font-size: 0.92rem;
     font-weight: 700;
     border: 1.5px solid white;
     border-radius: 4px;
     cursor: pointer;
     i {
         font-size: inherit;
-        margin-left: .6rem;
+        margin-left: 0.6rem;
         transform: translateY(2px);
     }
 }
@@ -110,14 +110,15 @@
 .decor__link,
 .wedding__link {
     font-weight: 700;
-    font-size: .92rem;
+    font-size: 0.92rem;
     i {
         vertical-align: middle;
         font-size: inherit;
-        margin-left: .6rem;
+        margin-left: 0.6rem;
     }
 }
 
+//Introduction List
 .introduction__list {
     display: flex;
     justify-content: space-between;
@@ -126,7 +127,7 @@
     li {
         text-align: center;
         width: 30%;
-        font-size: .95rem;
+        font-size: 0.95rem;
         line-height: 1.5rem;
         i {
             font-size: 1.3rem;
@@ -138,19 +139,47 @@
 
 .introduction__list-header {
     display: inline-block;
-    margin: 0 0 .4rem .6rem;
+    margin: 0 0 0.4rem 0.6rem;
     font-weight: 400;
     font-size: 1.15rem;
+}
+
+//Latest
+.latest {
+    @extend %container;
+    margin-top: .5rem;
+}
+
+.latest__header {
+    @extend .gift__header;
+    text-align: center;
+    width: 100%;
+}
+
+.latest__shops {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3rem 0 1rem 0;
+}
+
+.latest__shops .shop {
+    width: 15.5%;
+    margin: 0;
+    .shop__image {
+        border-radius: 3px;
+        height: 10rem;
+    }
 }
 
 //Gift
 .gift {
     @extend %container;
+    margin-bottom: 7.5rem;
 }
 
 .gift__header {
     display: inline-block;
-    margin: 2rem 1.3rem .5rem 0;
+    margin: 3rem 1.3rem 0.5rem 0;
     font-size: 1.8rem;
     cursor: pointer;
     @extend %hover-underline;
@@ -158,7 +187,7 @@
 
 .gift__link {
     cursor: pointer;
-    font-size: .95rem;
+    font-size: 0.95rem;
     @extend %hover-underline;
 }
 
@@ -166,6 +195,7 @@
     display: flex;
     justify-content: space-between;
     padding-left: 0;
+    margin: 1rem 0;
     li {
         width: 15.5%;
         @extend %border;
@@ -176,8 +206,8 @@
             object-fit: cover;
         }
         p {
-            font-size: .9rem;
-            margin: .3rem .7rem 1.8rem .7rem;
+            font-size: 0.9rem;
+            margin: 0.3rem 0.7rem 1.8rem 0.7rem;
         }
     }
 }
@@ -230,7 +260,7 @@
         justify-content: center;
         i {
             font-size: 1.2rem;
-            margin-left: .3em;
+            margin-left: 0.3em;
         }
     }
 }
@@ -238,22 +268,23 @@
 .banner__header {
     @extend %classy-font;
     font-size: 2.3rem;
-    letter-spacing: .01rem;
+    letter-spacing: 0.01rem;
 }
 
 .banner__description {
     font-size: 1.1rem;
-    margin: 1.4em 0 .6em 0;
+    margin: 1.4em 0 0.6em 0;
 }
 
+//subscription
 .cta-banners__subscription {
     text-align: center;
     margin-top: 10rem;
-    letter-spacing: .03rem;
+    letter-spacing: 0.03rem;
 }
 
 .subscription__description {
-    font-size: .95rem;
+    font-size: 0.95rem;
     margin-bottom: 2rem;
 }
 

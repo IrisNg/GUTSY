@@ -10,7 +10,11 @@ var ShopSchema = new mongoose.Schema({
    mainCategory: String,
    category: String,
    subCategory: String,
-   ownerId: String
+   ownerId: String,
+   created: {
+      type: Date,
+      default: Date.now
+   }
 });
 
 var Shop = mongoose.model('Shop', ShopSchema);

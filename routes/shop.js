@@ -2,6 +2,19 @@ var express = require('express'),
    router = express.Router(),
    Shop = require('../models/Shop');
 
+//Retrieve 6 latest shops (GET)
+router.get('/shops', (req, res) => {
+   Shop.find({})
+      .sort({ created: -1 })
+      .limit(6)
+      .exec((err, foundShops) => {
+         if (err) {
+            res.status(400).json('Could not find the latest shops');
+         } else {
+            res.json(foundShops);
+         }
+      });
+});
 //Retrieve shops that match the search term (GET)
 router.post('/shops/searches', (req, res) => {
    //Use regular expression to search for productName or shopName containing the search term

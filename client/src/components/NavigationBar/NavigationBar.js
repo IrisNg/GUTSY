@@ -6,6 +6,7 @@ import Basket from './Basket';
 import history from '../../history';
 import productCategories from '../../productCategories';
 import GoogleOAuth from '../GoogleOAuth/GoogleOAuth';
+import flatProductCategories from '../../flatProductCategories';
 
 import './NavigationBar.css';
 
@@ -27,6 +28,14 @@ class NavigationBar extends React.Component {
             {userDetails.username}
          </li>
       ) : null;
+   }
+   onDiscoverClick() {
+      //Generate a random index number
+      const randomIndex = Math.floor(Math.random() * (flatProductCategories.length - 1));
+      //Find a category param based on the random Index
+      const randomParam = flatProductCategories[randomIndex].param;
+      //Navigate user to the random Category page
+      history.push(`/category/${randomParam}`);
    }
    renderMainCategories() {
       return productCategories.map(mainCategory => {
@@ -122,7 +131,7 @@ class NavigationBar extends React.Component {
                      <i className="fab fa-google-plus-g" />
                      <GoogleOAuth isSignedIn={isSignedIn} />
                   </li>
-                  <li className="main-nav__discover">
+                  <li className="main-nav__discover" onClick={this.onDiscoverClick}>
                      <i className="fas fa-toolbox" />
                      <span>Discover</span>
                   </li>
