@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basket matches the snapshot when it contains items 1`] = `
+Array [
+  <i
+    className="fas fa-shopping-basket"
+  >
+    <span
+      className="basket__counter"
+    >
+      3
+    </span>
+  </i>,
+  <span>
+    Basket
+  </span>,
+  <div
+    className="basket__list-container"
+  >
+    <div
+      className="basket__list"
+    >
+      <div
+        className="basket-item"
+      >
+        <img
+          alt="basket item hello kitty"
+          className="basket-item__image"
+        />
+        <div
+          className="basket-item__product-details"
+        >
+          <h5
+            className="basket-item__name"
+          >
+            hello kitty
+          </h5>
+          <h3
+            className="basket-item__price"
+          >
+            $ 
+            23.20
+          </h3>
+        </div>
+      </div>
+      <div
+        className="basket-item"
+      >
+        <img
+          alt="basket item nom nom"
+          className="basket-item__image"
+        />
+        <div
+          className="basket-item__product-details"
+        >
+          <h5
+            className="basket-item__name"
+          >
+            nom nom
+          </h5>
+          <h3
+            className="basket-item__price"
+          >
+            $ 
+            66.66
+          </h3>
+        </div>
+      </div>
+      <div
+        className="basket-item"
+      >
+        <img
+          alt="basket item beep beep"
+          className="basket-item__image"
+        />
+        <div
+          className="basket-item__product-details"
+        >
+          <h5
+            className="basket-item__name"
+          >
+            beep beep
+          </h5>
+          <h3
+            className="basket-item__price"
+          >
+            $ 
+            75.2
+          </h3>
+        </div>
+      </div>
+      <div
+        className="basket__total"
+      >
+        <h5
+          className="basket__total-header"
+        >
+          Total
+        </h5>
+        <h6
+          className="basket__total-value"
+        >
+          $
+          164.00
+        </h6>
+      </div>
+      <button
+        className="basket__checkout-button"
+      >
+        Checkout
+      </button>
+    </div>
+  </div>,
+]
+`;

@@ -10,7 +10,7 @@ import flatProductCategories from '../../flatProductCategories';
 
 import './NavigationBar.css';
 
-class NavigationBar extends React.Component {
+export class NavigationBar extends React.Component {
    state = {
       activeCategory: null,
       url: history.location.pathname
@@ -128,7 +128,7 @@ class NavigationBar extends React.Component {
                   </li>
                   {this.renderUser(userDetails)}
                   <li className="main-nav__auth" key="auth">
-                     <i className="fab fa-google-plus-g" />
+                     
                      <GoogleOAuth isSignedIn={isSignedIn} />
                   </li>
                   <li className="main-nav__discover" onClick={this.onDiscoverClick} key="discover">

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { fetchSearches } from '../../actions';
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
    state = {
       prompt: 'Search for items or shops'
    };

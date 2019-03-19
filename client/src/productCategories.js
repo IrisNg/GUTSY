@@ -15,7 +15,7 @@ export default [
          {
             name: 'Jewellery & Beauty',
             param: 'jewellery-and-beauty',
-            subCategories: [{ name: 'Beads', param: 'beads' }, { name: 'Charms', params: 'charms' }, { name: 'Pendants', params: 'pendants' }]
+            subCategories: [{ name: 'Beads', param: 'beads' }, { name: 'Charms', param: 'charms' }, { name: 'Pendants', param: 'pendants' }]
          },
          {
             name: 'Sewing & Fiber',

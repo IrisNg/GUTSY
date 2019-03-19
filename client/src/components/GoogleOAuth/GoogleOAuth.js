@@ -48,9 +48,19 @@ class GoogleOAuth extends Component {
    };
    renderAuthButton(isSignedIn) {
       if (isSignedIn) {
-         return <button onClick={this.onSignOut}>Sign Out</button>;
+         return (
+            <button onClick={this.onSignOut} className="google-auth">
+               <i className="fab fa-google-plus-g" />
+               Sign Out
+            </button>
+         );
       } else {
-         return <button onClick={this.onSignIn}>Sign In</button>;
+         return (
+            <button onClick={this.onSignIn} className="google-auth">
+               <i className="fab fa-google-plus-g" />
+               Sign In
+            </button>
+         );
       }
    }
    render() {

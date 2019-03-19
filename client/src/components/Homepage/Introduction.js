@@ -8,7 +8,7 @@ const onUniqueClick = () => {
    //Navigate user to the random Category page
    history.push(`/category/${randomParam}`);
 };
-const Introduction = () => {
+export const Introduction = () => {
    return (
       <div className="introduction">
          <h1 className="introduction__header">

@@ -82,7 +82,7 @@
   justify-content: flex-end;
   align-items: center; }
   .main-nav__items li.main-nav__sell,
-  .main-nav__items li.main-nav__auth,
+  .main-nav__items li.main-nav__auth .google-auth,
   .main-nav__items li.main-nav__user {
     margin: 0 0.7rem;
     font-size: 0.95rem; }
@@ -101,7 +101,7 @@
   margin-right: 3px;
   border-radius: 50%; }
 
-.main-nav__auth {
+.main-nav__auth .google-auth {
   padding: 0.45rem 0.5rem;
   display: flex;
   align-items: center;
@@ -109,10 +109,10 @@
   border-radius: 3px;
   box-sizing: border-box;
   cursor: pointer; }
-  .main-nav__auth i {
+  .main-nav__auth .google-auth i {
     margin-right: 5px;
     font-size: 1.2rem; }
-  .main-nav__auth:hover {
+  .main-nav__auth .google-auth:hover {
     background-color: #404040;
     color: white;
     border-color: transparent; }

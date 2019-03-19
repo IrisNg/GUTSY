@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BasketItem from './BasketItem';
 
-class Basket extends React.Component {
+export class Basket extends React.Component {
    renderBasketCounter(basketItems) {
       if (basketItems.length === 0) {
          return null;
