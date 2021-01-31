@@ -4,7 +4,7 @@ var express = require('express'),
    bodyParser = require('body-parser'),
    mongoose = require('mongoose'),
    port = process.env.PORT || 5000,
-   url = process.env.MONGODB_URI || 'mongodb://localhost:27017/gutsy_app';
+   uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/gutsy_app';
 
 //-- SETUP : REQUIRING ROUTES
 
@@ -13,7 +13,7 @@ const path = require('path');
 const shopRoutes = require('./routes/shop');
 
 //-- SETUP : APP CONFIG
-mongoose.connect(url, { useNewUrlParser: true });
+mongoose.connect(uri, { useNewUrlParser: true });
 //NOTE: Required for axios to post form from React
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

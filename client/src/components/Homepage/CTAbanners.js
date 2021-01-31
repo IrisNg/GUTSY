@@ -5,11 +5,6 @@ const CTAbanners = () => {
    return (
       <div>
          <div className="cta-banners__banner banner-1">
-            <img
-               src="https://www.etsy.com/assets/dist/images/homepage/vesta/sell_on_etsy_left.20170228151449.png"
-               className="banner__left-image"
-               alt="artist drawing with cat"
-            />
             <div className="banner__content">
                <h1 className="banner__header">Start selling on Gutsy</h1>
                <p className="banner__description">Million of shoppers can't wait to see what you have in store.</p>
@@ -17,18 +12,8 @@ const CTAbanners = () => {
                   <span>Open a shop today</span> <i className="fas fa-angle-right" />
                </Link>
             </div>
-            <img
-               src="https://www.etsy.com/assets/dist/images/homepage/vesta/sell_on_etsy_right.20170228151449.png"
-               className="banner__right-image"
-               alt="artist sketching"
-            />
          </div>
          <div className="cta-banners__banner banner-2">
-            <img
-               src="https://www.etsy.com/assets/dist/images/homepage/vesta/about_etsy_wide_left.20170228151449.png"
-               className="banner__left-image"
-               alt="woman going to etsy market"
-            />
             <div className="banner__content">
                <h1 className="banner__header">What is Gutsy?</h1>
                <p className="banner__description">We're more than a marketplace.</p>
@@ -37,11 +22,6 @@ const CTAbanners = () => {
                   <i className="fas fa-angle-right" />
                </Link>
             </div>
-            <img
-               src="https://www.etsy.com/assets/dist/images/homepage/vesta/about_etsy_wide_right.20170228151449.png"
-               className="banner__right-image"
-               alt="woman bought stuff from etsy"
-            />
          </div>
          <div className="cta-banners__subscription">
             <p className="subscription__description">Get fresh Gutsy trends and unique gift ideas delivered right to your inbox.</p>
